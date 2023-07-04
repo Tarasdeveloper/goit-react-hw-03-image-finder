@@ -28,16 +28,13 @@ export class Modal extends Component {
   render() {
     const { imgLarge } = this.props;
 
-    return (
-      <>
-        createPortal(
-        <Overlay onClick={this.hendleCloseOnOverlay}>
-          <ModalWindow>
-            <img src={imgLarge} alt="" />
-          </ModalWindow>
-        </Overlay>
-        , modalRoot )
-      </>
+    return createPortal(
+      <Overlay onClick={this.hendleCloseOnOverlay}>
+        <ModalWindow>
+          <img src={imgLarge} alt="" />
+        </ModalWindow>
+      </Overlay>,
+      modalRoot
     );
   }
 }
